@@ -22,11 +22,12 @@ You only need to complete this once. If you have already completed these steps j
 ##### <u>SETUP AND INSTALL: BACK END API ENDPOINT</u>
 
 <details>
-  <summary>##### MACOS</summary>
-  ```bash
-  # Navigate into the django project
-  cd octopus/server
-  ```
+  #####<summary>MacOS</summary>
+
+```bash
+# Navigate into the django project
+cd octopus/server
+```
 
 It is good idea (but not required) to create a virtual environment
 for this project. We'll do this using
