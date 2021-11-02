@@ -19,7 +19,7 @@ You only need to complete this once. If you have already completed these steps j
 1. Clone this repo so the files are on your local computer.
 2. Open a new terminal in VSCode (Terminal > New Terminal)
 
-##### <u>SETUP AND INSTALL: BACK END API ENDPOINT</u>
+##### <u>INSTALL: BACK END API ENDPOINT</u>
 
 <details>
   <summary>MacOS</summary>
@@ -106,7 +106,21 @@ manage.py loaddata products
 
 </details>
 
-Now the API can use data. From now on, continue with the 'Getting started' section...
+Now the API can use data.
+
+##### <u>INSTALL: FRONT END APP</u>
+
+```bash
+# Change directory to the client folder
+cd "marketing-code-test\octopus\client"
+```
+
+```bash
+# Install the app dependencies so the front end can run
+npm install
+```
+
+From now on, continue with the 'Getting started' section...
 
 #### <u>GETTING STARTED</u>
 
@@ -116,6 +130,14 @@ Make sure you are in the server directory and run the following to allow the bac
 
 ```bash
 manage.py runserver 8000
+```
+
+#### Front End App
+
+Make sure you are in the client directory and run the following to allow the app to launch:
+
+```bash
+npm start
 ```
 
 You can now access the API endpoint with data here to test it works:
