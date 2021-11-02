@@ -108,7 +108,7 @@ manage.py loaddata products
 
 Now the API can use data. From now on, continue with the 'Getting started' section...
 
-## Getting started
+#### GETTING STARTED
 
 Back end API
 
