@@ -1,11 +1,13 @@
-## <u>ADDRESS BOOK</u>
+## <u>OCTOPUS DEMO</u>
 
 #### <u>ABOUT</u>
 
 This is a prototype address book application built using JavaScript / React. This app is not production ready; it's simply available to showcase a small prototype demonstrating the underlying code with it.
 
 You need to install nodeJS in order to use this: https://nodejs.org.
-You will also need to install Python (version 3.8) so the back end can be installed and run
+
+You will also need to install Python (version 3.8) so the back end can be installed and run.
+
 It is recommended to use VSCode to run these steps successfully: https://code.visualstudio.com
 
 #### <u>INSTALLATION</u>
@@ -19,12 +21,12 @@ You only need to complete this once. If you have already completed these steps j
 
 ##### <u>SETUP AND INSTALL: BACK END API ENDPOINT</u>
 
-##### UNIX / MACOS / LINUX
-
-```bash
-# Navigate into the django project
-cd octopus/server
-```
+<details>
+  <summary>##### MACOS</summary>
+  ```bash
+  # Navigate into the django project
+  cd octopus/server
+  ```
 
 It is good idea (but not required) to create a virtual environment
 for this project. We'll do this using
@@ -56,5 +58,7 @@ Now you should be ready to start the server:
 ```bash
 ./manage.py runserver 8000
 ```
+
+</details>
 
 You can now continue on the 'Getting started' section...
