@@ -126,19 +126,31 @@ From now on, continue with the 'Getting started' section...
 
 #### Back End API
 
-Make sure you are in the server directory and run the following to allow the back end API to launch:
+Make sure you are in the server directory
+
+```bash
+cd marketing-code-test\octopus\server
+```
+
+Run the following to allow the back end API to launch:
 
 ```bash
 manage.py runserver 8000
 ```
 
+You can now access the API endpoint with data here to test it works:
+[API EndPoint URL](<http://127.0.0.1:8000/graphql#operationName=getProductById&query=query%20getProductById%20%7B%0A%20%20product(productId%3A%201)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20power%0A%20%20%20%20description%0A%20%20%20%20price%0A%20%20%20%20quantity%0A%20%20%20%20brand%0A%20%20%20%20weight%0A%20%20%20%20height%0A%20%20%20%20width%0A%20%20%20%20length%0A%20%20%20%20modelCode%0A%20%20%20%20colour%0A%20%20%20%20imgUrl%0A%20%20%7D%0A%7D%0A>)
+
 #### Front End App
 
-Make sure you are in the client directory and run the following to allow the app to launch:
+Make sure you are in the client directory
+
+```bash
+cd marketing-code-test\octopus\client
+```
+
+Run the following to allow the app to launch:
 
 ```bash
 npm start
 ```
-
-You can now access the API endpoint with data here to test it works:
-[API EndPoint URL](<http://127.0.0.1:8000/graphql#operationName=getProductById&query=query%20getProductById%20%7B%0A%20%20product(productId%3A%201)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20power%0A%20%20%20%20description%0A%20%20%20%20price%0A%20%20%20%20quantity%0A%20%20%20%20brand%0A%20%20%20%20weight%0A%20%20%20%20height%0A%20%20%20%20width%0A%20%20%20%20length%0A%20%20%20%20modelCode%0A%20%20%20%20colour%0A%20%20%20%20imgUrl%0A%20%20%7D%0A%7D%0A>)
