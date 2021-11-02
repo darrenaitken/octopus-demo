@@ -10,7 +10,7 @@ You will also need to install Python (version 3.8) so the back end can be instal
 
 It is recommended to use VSCode to run these steps successfully: https://code.visualstudio.com
 
-#### <u>INSTALLATION</u>
+### <u>INSTALLATION</u>
 
 You must install everything locally first before you can run anything. The following installation steps only need to be completed once (unless a new app update has been uploaded to GitHub).
 
@@ -108,7 +108,7 @@ manage.py loaddata products
 
 Now the API can use data. From now on, continue with the 'Getting started' section...
 
-#### GETTING STARTED
+### <u>GETTING STARTED</u>
 
 Back end API
 
