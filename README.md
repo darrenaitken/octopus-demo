@@ -10,7 +10,7 @@ You will also need to install Python (version 3.8) so the back end can be instal
 
 It is recommended to use VSCode to run these steps successfully: https://code.visualstudio.com
 
-### <u>INSTALLATION</u>
+#### <u>INSTALLATION</u>
 
 You must install everything locally first before you can run anything. The following installation steps only need to be completed once (unless a new app update has been uploaded to GitHub).
 
@@ -108,9 +108,9 @@ manage.py loaddata products
 
 Now the API can use data. From now on, continue with the 'Getting started' section...
 
-### <u>GETTING STARTED</u>
+#### <u>GETTING STARTED</u>
 
-Back end API
+#### Back End API
 
 Make sure you are in the server directory and run the following to allow the back end API to launch:
 
@@ -118,5 +118,5 @@ Make sure you are in the server directory and run the following to allow the bac
 manage.py runserver 8000
 ```
 
-You can now access the API endpoint with data here:
+You can now access the API endpoint with data here to test it works:
 [API EndPoint URL](<http://127.0.0.1:8000/graphql#operationName=getProductById&query=query%20getProductById%20%7B%0A%20%20product(productId%3A%201)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20power%0A%20%20%20%20description%0A%20%20%20%20price%0A%20%20%20%20quantity%0A%20%20%20%20brand%0A%20%20%20%20weight%0A%20%20%20%20height%0A%20%20%20%20width%0A%20%20%20%20length%0A%20%20%20%20modelCode%0A%20%20%20%20colour%0A%20%20%20%20imgUrl%0A%20%20%7D%0A%7D%0A>)
