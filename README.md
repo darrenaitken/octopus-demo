@@ -104,22 +104,19 @@ manage.py migrate
 manage.py loaddata products
 ```
 
-Now you should be ready to start the server:
-
-```bash
-manage.py runserver 8000
-```
-
 </details>
 
-Now your back end has been populated with data. From now on, continue with the 'Getting started' section...
+Now the API can use data. From now on, continue with the 'Getting started' section...
 
 ## Getting started
 
 Back end API
 
-Run the following to allow the back end API to run:
+Make sure you are in the server directory and run the following to allow the back end API to launch:
 
 ```bash
 manage.py runserver 8000
 ```
+
+You can now access the API endpoint with data here:
+[API EndPoint URL](<http://127.0.0.1:8000/graphql#operationName=getProductById&query=query%20getProductById%20%7B%0A%20%20product(productId%3A%201)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%20%20power%0A%20%20%20%20description%0A%20%20%20%20price%0A%20%20%20%20quantity%0A%20%20%20%20brand%0A%20%20%20%20weight%0A%20%20%20%20height%0A%20%20%20%20width%0A%20%20%20%20length%0A%20%20%20%20modelCode%0A%20%20%20%20colour%0A%20%20%20%20imgUrl%0A%20%20%7D%0A%7D%0A>)
