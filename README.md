@@ -22,7 +22,7 @@ You only need to complete this once. If you have already completed these steps j
 ##### <u>SETUP AND INSTALL: BACK END API ENDPOINT</u>
 
 <details>
-  #####<summary>MacOS</summary>
+  <summary>MacOS</summary>
 
 ```bash
 # Navigate into the django project
@@ -59,6 +59,10 @@ Now you should be ready to start the server:
 ```bash
 ./manage.py runserver 8000
 ```
+
+<summary>Windows</summary>
+
+bla bla bla
 
 </details>
 
