@@ -22,11 +22,11 @@ You only need to complete this once. If you have already completed these steps j
 ##### <u>SETUP AND INSTALL: BACK END API ENDPOINT</u>
 
 <details>
-  **<summary>MacOS</summary>**
+  <summary>MacOS</summary>
 
 ```bash
 # Navigate into the django project
-cd octopus/server
+cd marketing-code-test/octopus/server
 ```
 
 It is good idea (but not required) to create a virtual environment
@@ -63,10 +63,63 @@ Now you should be ready to start the server:
 </details>
 
 <details>
-**<summary>Windows</summary>**
+<summary>Windows</summary>
 
-bla bla bla
+```bash
+# Navigate into the django project
+cd marketing-code-test/octopus/server
+```
+
+```bash
+# Make a new virtual environment folder
+mkdir "%localappdata%\Temp\Python Virtual Env"
+```
+
+```bash
+# Make a python virtual environment
+py -m venv "%localappdata%\Temp\Python Virtual Env"
+```
+
+```bash
+# Activate the python environment
+"%localappdata%\Temp\Python Virtual Env\Scripts\activate.bat"
+```
+
+(you should see Python Virtual Env in brackets afterwards)
+
+Now we need to install all the packages used by the back end:
+
+```bash
+# Activate the python environment
+pip install -r requirements.txt
+```
+
+```bash
+# Now run the migrate scripts
+manage.py migrate
+```
+
+```bash
+# Load dummy data
+manage.py loaddata products
+```
+
+Now you should be ready to start the server:
+
+```bash
+manage.py runserver 8000
+```
 
 </details>
 
-You can now continue on the 'Getting started' section...
+Now your back end has been populated with data. From now on, continue with the 'Getting started' section...
+
+## Getting started
+
+Back end API
+
+Run the following to allow the back end API to run:
+
+```bash
+manage.py runserver 8000
+```
