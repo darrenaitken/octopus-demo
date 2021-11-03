@@ -138,7 +138,7 @@ Also make sure you have a virtual Python environment running:
   <summary>MacOS</summary>
 
 ```bash
-# Create a virtualenv in which we can install the dependencies
+# Activate the python environment
 virtualenv env
 source env/bin/activate
 ```
