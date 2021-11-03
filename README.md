@@ -90,7 +90,7 @@ py -m venv "%localappdata%\Temp\Python Virtual Env"
 Now we need to install all the packages used by the back end:
 
 ```bash
-# Activate the python environment
+#  Install our dependencies
 pip install -r requirements.txt
 ```
 
@@ -131,6 +131,29 @@ Make sure you are in the server directory
 ```bash
 cd marketing-code-test\octopus\server
 ```
+
+Also make sure you have a virtual Python environment running:
+
+<details>
+  <summary>MacOS</summary>
+
+```bash
+# Create a virtualenv in which we can install the dependencies
+virtualenv env
+source env/bin/activate
+```
+
+</details>
+
+<details>
+  <summary>Windows</summary>
+
+```bash
+# Activate the python environment
+"%localappdata%\Temp\Python Virtual Env\Scripts\activate.bat"
+```
+
+</details>
 
 Run the following to allow the back end API to launch:
 
