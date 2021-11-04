@@ -8,7 +8,7 @@ import Footer from './components/footer'
 
 // Components - route pages
 import Home from './routes/home/home'
-import Products from "./routes/products/products"
+import Product from "./routes/products/product"
 import NotFound from "./routes/notFound/notfound"
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/home" component={Home} />
-                <Route path="/products" component={Products} />
+                <Route path="/products" component={Product} />
                 <Route path="/notfound" component={NotFound} />
                 <Redirect to="/notfound" />
             </Switch>

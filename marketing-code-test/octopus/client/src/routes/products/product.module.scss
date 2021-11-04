@@ -55,7 +55,7 @@
     "addToCart addToCart";
   align-items: center;
 
-  border: 1px solid rgb(227, 245, 63);
+  //   border: 1px solid rgb(227, 245, 63);
 
   .cellPrice {
     grid-area: price;
@@ -136,8 +136,8 @@ Button.square {
   cursor: pointer;
 }
 
-Button.square:hover,
-Button.square:focus-visible {
+Button.square:hover:not(:disabled),
+Button.square:focus-visible:not(:disabled) {
   outline: 2px solid white;
   background-color: $button-square-hover-color;
 }
