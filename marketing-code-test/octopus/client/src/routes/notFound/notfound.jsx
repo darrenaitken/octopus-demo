@@ -40,12 +40,12 @@ function NotFound() {
     }
 
     return (
-        <>
-        <img src={imgOctopus} className="octopus" alt="Octopus"/>
-        <Blurb blurbText="Whoops! Page Not Found" />
-        <Blurb blurbText={`We'll get you back home in ${seconds} second${seconds === 1 ? '' : 's'}...`} />
-        <Link id="linkHome" ref={refLinkHome} to={"/"} tabIndex="0">Go to Home page</Link>
-        </>
+        <div className="contentContainer">
+            <img src={imgOctopus} className="octopus" alt="Octopus"/>
+            <Blurb blurbText="Whoops! Page Not Found" />
+            <Blurb blurbText={`We'll get you back home in ${seconds} second${seconds === 1 ? '' : 's'}...`} />
+            <Link id="linkHome" ref={refLinkHome} to={"/"} tabIndex="0">Go to Home page</Link>
+        </div>
     )
 }
 

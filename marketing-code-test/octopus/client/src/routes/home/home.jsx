@@ -29,19 +29,19 @@ function Home() {
     } 
 
     return (
-        <>
-        <img src={imgOctopus} className="octopus" alt="Octopus"/>
-        <Blurb blurbText="Welcome to this small React app demo created by Darren Aitken"/>
-        <div className={styles.buttonContainer}>
-            <button id="btnDemo" 
-                ref={refBtnDemo} 
-                aria-label="See Demo" 
-                onClick={handleRedirectToProducts} 
-                onKeyDown={handleRedirectToProducts}>
-            See Demo
-            </button>
+        <div className="contentContainer">
+            <img src={imgOctopus} className="octopus" alt="Octopus"/>
+            <Blurb blurbText="Welcome to this small React app demo created by Darren Aitken"/>
+            <div className={styles.buttonContainer}>
+                <button id="btnDemo" 
+                    ref={refBtnDemo} 
+                    aria-label="See Demo" 
+                    onClick={handleRedirectToProducts} 
+                    onKeyDown={handleRedirectToProducts}>
+                See Demo
+                </button>
+            </div>
         </div>
-        </>
     )
 }
 

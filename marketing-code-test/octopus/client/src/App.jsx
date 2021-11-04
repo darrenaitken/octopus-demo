@@ -15,7 +15,6 @@ const App = () => {
     return (
         <div id="App">
             <Header />
-            <div className="contentContainer">
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/home" component={Home} />
@@ -23,7 +22,6 @@ const App = () => {
                 <Route path="/notfound" component={NotFound} />
                 <Redirect to="/notfound" />
             </Switch>
-            </div>
             <Footer />
         </div>
     )
