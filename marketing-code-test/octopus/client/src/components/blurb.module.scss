@@ -1,0 +1,10 @@
+@import "../variables";
+
+.blurb {
+  position: relative;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  color: $primary-font-color;
+  line-height: 2;
+}

@@ -1,0 +1,13 @@
+@import "../variables";
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  color: #899dbd;
+  padding: 1rem 2.75rem 1.5rem 0.75rem;
+  margin-top: auto;
+  font-size: 0.7rem;
+  line-height: 2;
+}

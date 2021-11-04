@@ -1,0 +1,84 @@
+@import "variables";
+
+body {
+  font-family: "Gotham SSm A", "Gotham SSm B", helvetica, arial, sans-serif;
+  margin: 0;
+  background-color: $body-color;
+  color: $primary-font-color;
+
+  #App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 450px;
+    background-color: white;
+    margin: 0 auto;
+  }
+
+  .contentContainer {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-flow: column;
+    flex: 1 1 auto;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $primary-color;
+  }
+
+  .buttonContainer {
+    margin-top: 75px;
+  }
+
+  .buttonStandard {
+    display: block;
+    background-color: $button-color;
+    cursor: pointer;
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    padding: 1rem;
+    padding-top: 1.35rem;
+    font-size: x-large;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $button-font-color;
+    background-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.35) 53%
+    );
+  }
+
+  .buttonStandard:hover,
+  .buttonStandard:focus-visible {
+    outline: 2px solid white;
+    background-color: $button-hover-color;
+  }
+
+  .linkStandard {
+    text-align: center;
+    color: $link-font-color;
+  }
+
+  .linkStandard:hover {
+    color: $link-font-hover-color;
+    text-decoration: none;
+  }
+
+  .linkStandard:focus-visible {
+    color: $link-font-hover-color;
+    text-decoration: none;
+    outline: 2px solid $link-outline-color-inside;
+    outline-offset: 3px;
+  }
+
+  img.octopus {
+    display: block;
+    width: 64px;
+    object-fit: contain;
+    align-self: center;
+  }
+}
