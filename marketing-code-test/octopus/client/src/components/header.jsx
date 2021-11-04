@@ -15,7 +15,7 @@ function Header() {
             <Link to={"/"} tabIndex="0" aria-label="Go to homepage">
                 <img name="logo" className={styles.logo} src={imgLogo} alt="Octopus Energy Logo"/>
             </Link> 
-            <div name="basketContainer" className={styles.basketContainer} tabIndex="0" aria-label="Shopping basket">
+            <div name="basketContainer" className={`${styles.basketContainer} focusOutline`} tabIndex="0" aria-label="Shopping basket">
                 <div id="basketCounter" className={styles.basketCounter}>0</div>
                 <img src={imgBasket} className={styles.imgBasket} alt="Basket"/>
             </div>
