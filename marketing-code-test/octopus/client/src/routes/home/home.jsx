@@ -19,9 +19,14 @@ function Home() {
     },[])
 
     function handleRedirectToProducts(e) {
-        e.preventDefault()
-        history.push("products");
-    }
+        
+        console.log(e.keyCode)
+
+        if(e.keyCode===13  || e.keyCode===32 || e.keyCode === undefined) {
+            e.preventDefault()
+            history.push("products");
+        }        
+    } 
 
     return (
         <>

@@ -1,0 +1,53 @@
+@import "../../variables";
+
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "title"
+    "quantity"
+    "description"
+    "specs";
+  grid-template-rows: auto;
+  padding: 2rem;
+
+  //   background-color: rgba(255, 0, 0, 0.26);
+  border: 1px solid red;
+}
+
+.gridImage {
+  grid-area: image;
+  min-height: 350px;
+
+  border: 1px solid blue;
+}
+
+.gridTitle {
+  grid-area: title;
+  min-height: 190px;
+  background-color: $secondary-color;
+
+  border: 1px solid rgb(49, 212, 43);
+}
+
+.gridQuantity {
+  grid-area: quantity;
+  min-height: 170px;
+
+  border: 1px solid rgb(227, 245, 63);
+}
+
+.gridDescription {
+  grid-area: description;
+  min-height: 200px;
+  background-color: $secondary-color;
+
+  border: 1px solid rgb(245, 63, 190);
+}
+
+.gridSpecs {
+  grid-area: specs;
+  min-height: 280px;
+
+  border: 1px solid rgb(133, 63, 245);
+}

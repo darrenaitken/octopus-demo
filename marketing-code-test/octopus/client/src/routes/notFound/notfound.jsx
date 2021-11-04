@@ -14,7 +14,7 @@ function NotFound() {
 
     const refLinkHome = useRef()
 
-    const [seconds, setSeconds] = useState(50)
+    const [seconds, setSeconds] = useState(5)
 
     // componentDidMount (run once at the start)
     useEffect(() => {
