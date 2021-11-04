@@ -9,26 +9,25 @@
     "quantity"
     "description"
     "specs";
-  grid-template-rows: auto;
 
   background-color: $primary-color;
+
   //   border: 1px solid red;
 }
 
 // Applies to all child grid elements
 .gridContainer > * {
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
 }
 
-.gridImageTop {
+.cellImageTop {
   grid-area: imageTop;
-  min-height: 340px;
-  text-align: center;
+  min-height: 325px;
 
-  border: 1px solid blue;
+  //   border: 1px solid blue;
 }
 
-.gridImageBottom {
+.cellImageBottom {
   grid-area: imageBottom;
 
   height: 20px;
@@ -37,39 +36,60 @@
   //   border: 1px solid blue;
 }
 
-.gridTitle {
+.cellTitle {
   grid-area: title;
-  min-height: 150px;
+  min-height: 125px;
   background-color: $secondary-color;
   padding-top: 0;
 
-  border: 1px solid rgb(49, 212, 43);
+  //   border: 1px solid rgb(49, 212, 43);
 }
 
 .gridQuantity {
   grid-area: quantity;
   min-height: 150px;
 
+  display: grid;
+  grid-template-areas:
+    "price toggleQuantity"
+    "addToCart addToCart";
+  align-items: center;
+
   border: 1px solid rgb(227, 245, 63);
+
+  .cellPrice {
+    grid-area: price;
+  }
+
+  .cellToggleQuantity {
+    grid-area: toggleQuantity;
+    justify-self: end;
+    align-self: start;
+  }
+
+  .cellAddToCart {
+    grid-area: addToCart;
+    justify-self: center;
+  }
 }
 
-.gridDescription {
+.cellDescription {
   grid-area: description;
   min-height: 165px;
   background-color: $secondary-color;
 
-  border: 1px solid rgb(245, 63, 190);
+  //   border: 1px solid rgb(245, 63, 190);
 }
 
-.gridSpecs {
+.cellSpecs {
   grid-area: specs;
   min-height: 250px;
 
-  border: 1px solid rgb(133, 63, 245);
+  //   border: 1px solid rgb(133, 63, 245);
 }
 
 .imgProduct {
-  max-width: 300px;
+  width: 330px;
   object-fit: contain;
   margin: auto;
   padding: 0 0 1rem 0;
@@ -77,13 +97,71 @@
   grid-column-start: 1;
   grid-row-start: 1;
   grid-row-end: span 2;
-  text-align: center;
-
-  //   background-color: red;
 }
 
 h1,
-h2,
-h3 {
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+h3,
+h4 {
+  color: $h3-subheader-color;
+  font-weight: 500;
   margin: 0;
+}
+
+.textSpacing {
+  line-height: 22px;
+}
+
+.price {
+  display: inline;
+  font-size: 2.7rem;
+  font-weight: bolder;
+
+  sup {
+    font-size: 1.5rem;
+  }
+}
+
+Button.square {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: $button-square-color;
+  color: $button-square-font-color;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+Button.square:hover,
+Button.square:focus-visible {
+  outline: 2px solid white;
+  background-color: $button-square-hover-color;
+}
+
+Button.square:disabled {
+  background-color: $button-square--disabled-color;
+  cursor: no-drop;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.mb1 {
+  margin-bottom: 0.2rem;
+}
+
+.quantityNumber {
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 0 0.5rem;
 }

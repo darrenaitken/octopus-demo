@@ -35,6 +35,7 @@ function Home() {
             <div className={styles.buttonContainer}>
                 <button id="btnDemo" 
                     ref={refBtnDemo} 
+                    className="standard"
                     aria-label="See Demo" 
                     onClick={handleRedirectToProducts} 
                     onKeyDown={handleRedirectToProducts}>
