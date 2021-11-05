@@ -89,7 +89,7 @@
 }
 
 .imgProduct {
-  width: 330px;
+  max-width: 330px;
   object-fit: contain;
   margin: auto;
   padding: 0 0 1rem 0;
@@ -164,4 +164,15 @@ Button.square:disabled {
   font-size: xx-large;
   font-weight: 900;
   margin: 0 0.5rem;
+}
+
+.tableSpecifications {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    height: 1rem;
+    border-bottom: 1px solid $secondary-color;
+  }
 }

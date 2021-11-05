@@ -1,5 +1,5 @@
 // Node modules
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from "prop-types"
 
 // Components and styles
@@ -9,7 +9,6 @@ function ProductImage({ image, imgAlt }) {
     return (
         <>
         <img className={styles.imgProduct} src={image} alt={imgAlt}/>
-        <div className={styles.cellImageTop} />
         <div className={styles.cellImageBottom} />
         </>
     )
@@ -24,4 +23,4 @@ ProductImage.defaultProps = {
     imgAlt: "Product Image"
 }
 
-export default ProductImage
+export default memo(ProductImage)

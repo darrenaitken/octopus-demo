@@ -1,5 +1,5 @@
 // Node modules
-import React, { useState } from 'react'
+import React, { memo } from 'react'
 import PropTypes from "prop-types"
 
 // Components and styles
@@ -18,4 +18,4 @@ ProductDescription.propTypes = {
     description: PropTypes.string.isRequired,
 };
 
-export default ProductDescription
+export default memo(ProductDescription)

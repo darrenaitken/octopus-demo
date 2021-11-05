@@ -1,5 +1,5 @@
 // Node modules
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from "prop-types"
 
 // Components and styles
@@ -19,4 +19,4 @@ ProductHeader.propTypes = {
     subtitle: PropTypes.string.isRequired
 };
 
-export default ProductHeader
+export default memo(ProductHeader)

@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from 'react'
 import { useHistory } from "react-router-dom";
 
+import { validInteraction } from '../../js/genericFunctions';
+
 // Components and styles
 import imgOctopus from "../../assets/octopus.svg"
 import Blurb from "../../components/blurb"
@@ -19,12 +21,9 @@ function Home() {
     },[])
 
     function handleRedirectToProducts(e) {
-        
-        console.log(e.keyCode)
-
-        if(e.keyCode===13  || e.keyCode===32 || e.keyCode === undefined) {
+        if(validInteraction(e)) {
             e.preventDefault()
-            history.push("products");
+            history.push("product");
         }        
     } 
 
