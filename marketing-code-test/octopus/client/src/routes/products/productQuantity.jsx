@@ -1,6 +1,6 @@
 // Node modules
 import React, { useState, memo } from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from "prop-types"
 
 // Shared Functions
@@ -13,15 +13,24 @@ import styles from "./product.module.scss"
 
 function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
 
+    // Only allow customers to order up to 99 items of each type
+    // (note: this max setting would normally come from the inventory / stock limit - not hardcoded)
+    const maxQuantity = 99
+    let limitQuantity = maxQuantity
+
     const defaultQuantity = 1;
     const [quantity, setQuantity] = useState(defaultQuantity)
 
     // Dispatch updates the redux counter store (updates basket)
     const dispatch = useDispatch();
 
-    // Only allow customers to order up to 99 items of each type
-    // (note: this max setting would normally come from the inventory / stock limit - not hardcoded)
-    const maxQuantity = 99
+    // Get value from redux basket store
+    // (we may have added more than our limit from before)
+    const arrItemsBasket = useSelector((state) => state.basket.arrItems);
+    const basketItem = arrItemsBasket.find(item => item.id === productId)
+    if(basketItem) {
+        limitQuantity = maxQuantity - basketItem.quantity
+    }
 
     function handleIncreaseQuantity (e) {
         if(validInteraction(e)) {
@@ -72,7 +81,7 @@ function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
                         onClick={handleIncreaseQuantity} 
                         onKeyDown={handleIncreaseQuantity} 
                         aria-label="Increase quantity by one"
-                        disabled={quantity === maxQuantity}>
+                        disabled={quantity >= limitQuantity}>
                         +
                     </button>
                 </div>
