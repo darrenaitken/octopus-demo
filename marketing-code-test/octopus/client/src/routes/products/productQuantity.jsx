@@ -41,7 +41,7 @@ function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
         if(validInteraction(e)) {
             e.preventDefault();
             const basketItem = new BasketItem(productId, productName,`${unitPounds}.${unitPence}`,quantity)
-            setQuantity(defaultQuantity )
+            setQuantity(defaultQuantity)
             dispatch(basketAdd(basketItem))
         }
     }

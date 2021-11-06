@@ -1,5 +1,5 @@
 // Node Modules
-import React, { useEffect } from 'react'
+import React from 'react'
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -71,9 +71,9 @@ function BasketModal() {
                             {basket.arrItems.map(item => (
                                 <tr>
                                     <td>{item.product}</td>
-                                    <td>{item.price}</td>
+                                    <td>{item.price.toFixed(2)}</td>
                                     <td>{item.quantity}</td>
-                                    <td>{item.price * item.quantity}</td>
+                                    <td>{(item.price * item.quantity).toFixed(2)}</td>
                                     <td><ButtonSmall 
                                         id={item.id}
                                         name="btnRemove" 
@@ -89,6 +89,7 @@ function BasketModal() {
                             <div className={styles.basketSummary}>Grand Total: £{basket.totalPrice} ({basket.totalQuantity} Items)</div>
                             <div><strong>
                             <ButtonSmall 
+                                id="btnCheckout"
                                 name="btnCheckout" 
                                 buttonText="CHECKOUT" 
                                 alt="Check out"

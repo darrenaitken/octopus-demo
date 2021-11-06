@@ -58,7 +58,8 @@ const basketReducer = (state = initialState, action) => {
 
   const totalPriceTemp = arrItemsTemp
     .map((item) => item.price * item.quantity)
-    .reduce((prev, curr) => prev + curr, 0);
+    .reduce((prev, curr) => prev + curr, 0)
+    .toFixed(2);
 
   return {
     ...state,

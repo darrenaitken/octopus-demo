@@ -1,6 +1,6 @@
 // Function adds leading zeros (same as ES2017 zeroPad)
 export function zeroPad(num, places) {
-  var zero = places - num.toString().length + 1;
+  let zero = places - num.toString().length + 1;
   return Array(+(zero > 0 && zero)).join("0") + num;
 }
 
