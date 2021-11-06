@@ -55,6 +55,7 @@ function Product() {
         const getData = async () => {
             try {
               const result =  await fetchData(ENDPOINT,PRODUCT_QUERY);
+
               const { product:p } = result
 
                 // our ProductSpecs component needs an array of key value pairs to display as a table

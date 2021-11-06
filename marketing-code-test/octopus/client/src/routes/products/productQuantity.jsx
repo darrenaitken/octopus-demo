@@ -68,6 +68,7 @@ function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
                 <h4 className={`${styles.centerText} ${styles.mb1}`}>QTY</h4>
                 <div className={styles.quantityContainer}>
                     <button 
+                        data-testid="idBtnDecreaseQuantity"
                         className={styles.square} 
                         onClick={handleDecreaseQuantity} 
                         onKeyDown={handleDecreaseQuantity} 
@@ -75,8 +76,9 @@ function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
                         disabled={quantity === 1}>
                         -
                     </button>
-                    <span className={styles.quantityNumber}>{quantity}</span>
+                    <span data-testid="idQuantity" className={styles.quantityNumber}>{quantity}</span>
                     <button 
+                        data-testid="idBtnIncreaseQuantity"
                         className={styles.square} 
                         onClick={handleIncreaseQuantity} 
                         onKeyDown={handleIncreaseQuantity} 
@@ -87,6 +89,7 @@ function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
                 </div>
             </div>
             <button 
+                data-testid="idBtnAddToBasket"
                 className={`standard ${styles.cellAddToCart}`}
                 onClick={handleAddToBasket}
                 onKeyDown={handleAddToBasket}>
