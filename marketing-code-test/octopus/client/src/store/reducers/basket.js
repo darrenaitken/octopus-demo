@@ -20,11 +20,15 @@ export const basketRemove = (payload) => ({
 const basketReducer = (state = initialState, action) => {
   const { payload } = action;
   let arrItemsTemp = [...state.arrItems];
+  let existingItem = {};
 
   // Remove the same item if it was already added
   // (we can add this back in again later if more of the same item was added)
-  const existingItem = arrItemsTemp.find((item) => item.id === payload.id);
-  arrItemsTemp = arrItemsTemp.filter((item) => item.id !== payload.id);
+  // This is only applicable if we have an action (add or remove) from our payload
+  if (payload) {
+    existingItem = arrItemsTemp.find((item) => item.id === payload.id);
+    arrItemsTemp = arrItemsTemp.filter((item) => item.id !== payload.id);
+  }
 
   switch (action.type) {
     case BASKET_ADD:
@@ -33,6 +37,7 @@ const basketReducer = (state = initialState, action) => {
       // Item was added before so increase quantity
       if (existingItem) {
         basketItem.id = payload.id;
+        basketItem.product = payload.product;
         basketItem.price = payload.price;
         basketItem.quantity = existingItem.quantity + payload.quantity;
       } else {

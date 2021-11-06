@@ -1,0 +1,24 @@
+@import "../variables";
+
+Button.small {
+  min-width: 70px;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: $button-square-color;
+  color: $button-square-font-color;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+Button.small:hover:not(:disabled),
+Button.small:focus-visible:not(:disabled) {
+  outline: 2px solid white;
+  background-color: $button-square-hover-color;
+}
+
+Button.small:disabled {
+  background-color: $button-square--disabled-color;
+  cursor: no-drop;
+}

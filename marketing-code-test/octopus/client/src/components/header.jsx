@@ -4,20 +4,25 @@ import { Link, useLocation } from "react-router-dom";
 import { gsap } from 'gsap';
 
 // Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+// Shared Functions
+import { validInteraction } from '../js/genericFunctions';
+import { showBasket } from "../store/reducers/basketModal"
 
 // Images
 import imgLogo from "../assets/logo.svg"
 import imgBasket from "../assets/basket.svg"
-
-import { validInteraction } from '../js/genericFunctions';
 
 // Components and styles
 import styles from "./header.module.scss"
 
 function Header() {
 
-    // Get count from redux counter store
+    // Dispatch updates the redux counter store (updates showBasket)
+    const dispatch = useDispatch();
+
+    // Get value from redux basket store
     const totalQuantity = useSelector((state) => state.basket.totalQuantity);
 
     const refBasketCounter = useRef()
@@ -25,7 +30,7 @@ function Header() {
     // Only display the shopping basket for certain routes specified in the array
     const location = useLocation()
     const arrBasketRoutes = ["/product"]
-    const showBasket = showBasketInfo()
+    const showBasketInfo = arrBasketRoutes.indexOf(location.pathname,0) >= 0
 
     // Every time the quantity changes we will highlight it for a few seconds
     useEffect(() => {
@@ -36,15 +41,10 @@ function Header() {
         }
     },[totalQuantity])
 
-    // Function returns true if we should show the basket
-    function showBasketInfo() {
-        return arrBasketRoutes.indexOf(location.pathname,0) >= 0
-    }
-
     function showBasketWindow(e) {
         if(validInteraction(e)) {
-            e.preventDefault()
-            
+            e.preventDefault();
+            dispatch(showBasket())
         } 
     }
 
@@ -61,7 +61,7 @@ function Header() {
             aria-label="Shopping basket"
             onKeyDown={showBasketWindow}
             onClick={showBasketWindow}>
-                {showBasket ? 
+                {showBasketInfo ? 
                 <>
                 <div id="basketCounter" ref={refBasketCounter} className={styles.basketCounter}>{totalQuantity}</div>
                 <img src={imgBasket} className={styles.imgBasket} alt="Basket"/>

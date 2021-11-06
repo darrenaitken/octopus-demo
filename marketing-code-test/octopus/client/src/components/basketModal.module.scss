@@ -1,0 +1,114 @@
+@import "../variables";
+
+/* The Modal (background) */
+.modalBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Modal Content */
+.modalBox {
+  position: absolute;
+  max-width: 440px;
+  top: 12vh;
+}
+
+/* Top Bar */
+.modalTopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $modal-top-color;
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Standard content */
+.modalBody {
+  background-color: $modal-body-color;
+  padding: 10px 10px;
+  border-radius: 0 0 5px 5px;
+  color: $modal-body-font-color;
+}
+
+/* The Close Button */
+.modalButtonClose {
+  display: inline-flex;
+  height: 35px;
+  width: 35px;
+  margin-left: auto;
+  margin-right: 0;
+  background-color: $button-square-color;
+  color: $button-square-font-color;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalButtonClose:hover:not(:disabled),
+.modalButtonClose:focus-visible:not(:disabled) {
+  outline: 2px solid white;
+  background-color: $button-square-hover-color;
+}
+
+.modalHeader {
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 2px solid $modal-title-strip-color;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.modalFooter {
+  font-weight: bold;
+  border-top: 2px solid $modal-footer-strip-color;
+  margin-top: 20px;
+  padding: 5px 0;
+}
+
+.basketSummary {
+  margin: 20px 0;
+}
+
+.basketTable {
+  width: 100%;
+
+  th {
+    background-color: $primary-color;
+    color: white;
+    padding: 3px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  tr {
+    height: 1rem;
+    border-bottom: 1px solid $primary-color;
+  }
+
+  td {
+    padding: 3px;
+  }
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}

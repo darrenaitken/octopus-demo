@@ -110,7 +110,7 @@ function Product() {
             <div className={styles.gridContainer}>
                 <ProductImage image={imgLightbulb}/>
                 <ProductHeader title={p.name} subtitle={`${p.power} // Packet of ${p.quantity}`} />
-                <ProductQuantity unitPounds={pounds} unitPence={pence}/>
+                <ProductQuantity productId={p.id} productName={p.name} unitPounds={pounds} unitPence={pence}/>
                 <ProductDescription description={p.description} />
                 <ProductSpecs arrDetails={state.arrDetails}/> 
             </div>

@@ -4,14 +4,14 @@ import { useDispatch } from 'react-redux'
 import PropTypes from "prop-types"
 
 // Shared Functions
-import { basketAdd, basketRemove } from "../../store/reducers/basket"
+import { basketAdd } from "../../store/reducers/basket"
 import { zeroPad, validInteraction } from '../../js/genericFunctions'
 import BasketItem from "../../js/BasketItem"
 
 // Components and styles
 import styles from "./product.module.scss"
 
-function ProductQuantity({ unitPounds, unitPence }) {
+function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
 
     const defaultQuantity = 1;
     const [quantity, setQuantity] = useState(defaultQuantity)
@@ -40,7 +40,7 @@ function ProductQuantity({ unitPounds, unitPence }) {
     function handleAddToBasket(e) {
         if(validInteraction(e)) {
             e.preventDefault();
-            const basketItem = new BasketItem(123,`${unitPounds}.${unitPence}`,quantity)
+            const basketItem = new BasketItem(productId, productName,`${unitPounds}.${unitPence}`,quantity)
             setQuantity(defaultQuantity )
             dispatch(basketAdd(basketItem))
         }
@@ -88,6 +88,8 @@ function ProductQuantity({ unitPounds, unitPence }) {
 }
 
 ProductQuantity.propTypes = {
+    productId: PropTypes.number.isRequired,
+    productName: PropTypes.string.isRequired,
     unitPounds: PropTypes.number.isRequired,
     unitPence: PropTypes.number
 };
