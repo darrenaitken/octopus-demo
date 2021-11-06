@@ -6,7 +6,7 @@ import fetchData from "../../js/fetch"
 import { enumRenderStatus } from "../../js/enums"
 
 // Components and styles
-import imgLightbulb from "../../assets/lightbulb.jpg"
+// import imgLightbulb from "../../assets/lightbulb.jpg"
 import ProductImage from './productImage'
 import ProductHeader from './productHeader'
 import ProductQuantity from './productQuantity'
@@ -108,7 +108,7 @@ function Product() {
 
           return (
             <div className={styles.gridContainer}>
-                <ProductImage image={imgLightbulb}/>
+                <ProductImage imageURL={p.imgUrl}/>
                 <ProductHeader title={p.name} subtitle={`${p.power} // Packet of ${p.quantity}`} />
                 <ProductQuantity productId={p.id} productName={p.name} unitPounds={pounds} unitPence={pence}/>
                 <ProductDescription description={p.description} />

@@ -5,10 +5,10 @@ import PropTypes from "prop-types"
 // Components and styles
 import styles from "./product.module.scss"
 
-function ProductImage({ image, imgAlt }) {
+function ProductImage({ imageURL, imgAlt }) {
     return (
         <>
-        <img className={styles.imgProduct} src={image} alt={imgAlt}/>
+        <img className={styles.imgProduct} src={imageURL} alt={imgAlt}/>
         <div className={styles.cellImageBottom} />
         </>
     )
