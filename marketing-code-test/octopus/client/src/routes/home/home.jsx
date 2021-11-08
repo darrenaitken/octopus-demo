@@ -32,8 +32,9 @@ function Home() {
             <img src={imgOctopus} className="octopus" alt="Octopus"/>
             <Blurb blurbText="Welcome to this small React app demo created by Darren Aitken"/>
             <div className={styles.buttonContainer}>
-                <button id="btnDemo" 
+                <button 
                     ref={refBtnDemo} 
+                    data-testid="idBtnDemo"
                     className="standard"
                     aria-label="See Demo" 
                     onClick={handleRedirectToProducts} 

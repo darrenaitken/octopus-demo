@@ -61,15 +61,17 @@ function BasketModal() {
                         <>
                         <table className={styles.basketTable}>
                             <thead>
-                                <th className={styles.alignLeft}>Item</th>
-                                <th aria-label="Cost for each unit of this product">Price</th>
-                                <th aria-label="Quantity">QTY</th>
-                                <th aria-label="Total price for this particular item and quantity">Total</th>
-                                <th className={styles.noColor}></th>
+                                <tr>
+                                    <th className={styles.alignLeft}>Item</th>
+                                    <th aria-label="Cost for each unit of this product">Price</th>
+                                    <th aria-label="Quantity">QTY</th>
+                                    <th aria-label="Total price for this particular item and quantity">Total</th>
+                                    <th className={styles.noColor}></th>
+                                </tr>
                             </thead>
                             <tbody>
                             {basket.arrItems.map(item => (
-                                <tr>
+                                <tr key={item.id}>
                                     <td>{item.product}</td>
                                     <td>{item.price.toFixed(2)}</td>
                                     <td>{item.quantity}</td>

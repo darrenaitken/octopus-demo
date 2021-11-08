@@ -1,21 +1,34 @@
 // Node Modules
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { render, fireEvent, screen } from "@testing-library/react";
+import {
+  render,
+  fireEvent,
+  screen,
+  act,
+  cleanup,
+} from "@testing-library/react";
+import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
 
 // Redux
 import { Provider } from "react-redux";
 import store from "../store/allReducers";
 
-// Override the global fetch function to always return this set of data
-//import fetch from "./__mocks__/fetch";
+// Mocked data for fetching
+import MockProduct from "./__mocks__/product";
 
 // Components
 import App from "../App";
 import ProductQuantity from "../routes/products/productQuantity";
+import Product from "../routes/products/product";
+
+// Start again from scratch after every test
+afterEach(() => {
+  cleanup();
+});
 
 // UNIT TESTS
-describe("unit tests", () => {
+describe("Example unit tests", () => {
   it("renders my app", async () => {
     const wrapper = AllTheProviders(<App />);
     // const { debug } = render(wrapper); // Incase we need to debug()
@@ -70,27 +83,44 @@ describe("unit tests", () => {
 
     expect(myValue).toBe("4");
   });
+});
+
+describe("Example integration tests", () => {
+  enableFetchMocks();
 
   it("should be able to add items to the basket", async () => {
-    const myElement = AllTheProviders(
-      <ProductQuantity
-        productId={1}
-        productName="Dummy Product Name"
-        unitPounds={12}
-        unitPence={99}
-      />
-    );
+    const myApp = AllTheProviders(<App />);
 
-    render(myElement);
+    // We will use this mock product object for our fetch result
+    const mockProduct = JSON.stringify(MockProduct());
+    fetchMock.mockResponseOnce(mockProduct);
+
+    // We are on the home page so go to the product page by clicking on the demo button
+    render(myApp);
+    const btnDemo = screen.getByTestId("idBtnDemo");
+    fireEvent.click(btnDemo);
+
+    // This line has to be used as we change state in useEffect for Product component
+    // (updates from 'loading...' to either error or components)
+    await act(async () => render(myApp));
+
+    // Wait until the product image appears
+    expect(screen.getByTestId("idProductImage")).toBeInTheDocument();
+
     const btnIncrease = screen.getByTestId("idBtnIncreaseQuantity");
     const btnAddToBasket = screen.getByTestId("idBtnAddToBasket");
+
     fireEvent.click(btnIncrease); // 2
     fireEvent.click(btnIncrease); // 3
     fireEvent.click(btnAddToBasket); // save to basket
 
-    const myValue = store.getState().basket.totalQuantity;
+    // Get the last render of the basket counter
+    const basketCounter = screen
+      .getAllByTestId("idBasketCounter")
+      .slice(-1)
+      .pop();
 
-    expect(myValue).toBe(3);
+    expect(basketCounter).toHaveTextContent("3");
   });
 });
 

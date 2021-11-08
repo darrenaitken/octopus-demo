@@ -100,7 +100,7 @@ function ProductQuantity({ productId, productName, unitPounds, unitPence }) {
 }
 
 ProductQuantity.propTypes = {
-    productId: PropTypes.number.isRequired,
+    productId: PropTypes.string.isRequired,
     productName: PropTypes.string.isRequired,
     unitPounds: PropTypes.number.isRequired,
     unitPence: PropTypes.number

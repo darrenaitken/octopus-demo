@@ -8,14 +8,14 @@ import styles from "./product.module.scss"
 function ProductImage({ imageURL, imgAlt }) {
     return (
         <>
-        <img className={styles.imgProduct} src={imageURL} alt={imgAlt}/>
+        <img data-testid="idProductImage" className={styles.imgProduct} src={imageURL} alt={imgAlt}/>
         <div className={styles.cellImageBottom} />
         </>
     )
 }
 
 ProductImage.propTypes = {
-    image: PropTypes.string.isRequired,
+    imageURL: PropTypes.string.isRequired,
     imgAlt: PropTypes.string
 }
 

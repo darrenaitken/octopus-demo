@@ -25,6 +25,25 @@ body {
     padding: 2rem;
   }
 
+  a {
+    text-align: center;
+    color: $link-font-color;
+  }
+
+  a:hover {
+    color: $link-font-hover-color;
+    text-decoration: none;
+  }
+
+  a:focus-visible,
+  .focusOutline:focus-visible {
+    color: $link-font-hover-color;
+    text-decoration: none;
+    outline: 3px solid $link-outline-color;
+    outline-offset: 2px;
+    border-radius: 5px;
+  }
+
   Button.standard {
     display: block;
     width: 100%;
@@ -49,25 +68,6 @@ body {
   Button.standard:focus-visible {
     outline: 2px solid white;
     background-color: $button-hover-color;
-  }
-
-  a {
-    text-align: center;
-    color: $link-font-color;
-  }
-
-  a:hover {
-    color: $link-font-hover-color;
-    text-decoration: none;
-  }
-
-  a:focus-visible,
-  .focusOutline:focus-visible {
-    color: $link-font-hover-color;
-    text-decoration: none;
-    outline: 3px solid $link-outline-color;
-    outline-offset: 2px;
-    border-radius: 5px;
   }
 
   img.octopus {

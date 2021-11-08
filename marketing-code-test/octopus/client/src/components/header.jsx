@@ -63,7 +63,7 @@ function Header() {
             onClick={showBasketWindow}>
                 {showBasketInfo ? 
                 <>
-                <div data-testid="idBasketCounter" ref={refBasketCounter} className={styles.basketCounter}>{totalQuantity}</div>
+                <div id="idBasketCounter" data-testid="idBasketCounter" ref={refBasketCounter} className={styles.basketCounter}>{totalQuantity}</div>
                 <img src={imgBasket} className={styles.imgBasket} alt="Basket"/>
                 </>
                 : null}
